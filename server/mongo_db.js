@@ -3,7 +3,7 @@ import { BudgetSchema, LoginSchema } from './schema.js';
 
 
 // Define the connection URL
-const mongoURI = 'mongodb+srv://doadmin:I6J39287RGjK50wD@db-mongodb-budget-app-9cfd9833.mongo.ondigitalocean.com/admin?tls=true&authSource=admin&replicaSet=db-mongodb-budget-app';
+const mongoURI = process.env.MONGODB_URI;
 
 async function connect() {
     try {
