@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import bodyParser from 'body-parser';
+import gzip from 'compression';
 import { connect,
         disconnect, 
         getBudgetData, 
@@ -16,11 +17,14 @@ const app = express();
 const port = 4000;
 
 // set up cors to allow us to accept requests from our client
-app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN  }));
 
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
+
+// Middleware to compress responses
+app.use(gzip());
 
 // Secret key for JWT
 const secretKey = 'key';
