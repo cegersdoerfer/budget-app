@@ -8,7 +8,7 @@ import ExpensesPage from './components/expenses/budget_page'
 import TokenNotification from './components/token_notification'
 import DashboardNavigation from './components/navigation'
 
-const api = 'http://localhost:4000';
+const api = process.env.REACT_APP_API_ADDRESS;
 
 
 
